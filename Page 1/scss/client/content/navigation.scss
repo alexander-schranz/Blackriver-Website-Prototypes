@@ -40,6 +40,7 @@
 .sidebar {
     border-right: $menuBorderWidth solid $menuBorderColor;
     position: fixed;
+    z-index: 500;
     top: 0;
     width: $navigationWidth;
     height: 100%;
@@ -53,6 +54,18 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    @media (max-width: $mobileBreakPoint) {
+        width: 0;
+        overflow: hidden;
+        bottom: 0;
+        top: auto;
+        &.opened {
+            width: $navigationWidth;
+            top: 0;
+            padding-top: 0;
+            height: 100%;
+        }
+    }
 }
 
 .main-menu {
@@ -71,21 +84,6 @@
         img {
             max-width: 100%;
             display: block;
-        }
-    }
-    @media (max-width: $mobileBreakPoint) {
-        border-top: 40px solid $mainColor;
-        height: 0px;
-        overflow: hidden;
-        bottom: 0;
-        top: auto;
-        width: 100%;
-        &.opened {
-            border: 0;
-            width: $navigationWidth;
-            top: 0;
-            padding-top: 0;
-            height: 100%;
         }
     }
 }

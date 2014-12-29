@@ -29,6 +29,16 @@
     }
 }
 
+.grid-clear {
+    float: none;
+    &:after {
+        content: " ";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+}
+
 @for $i from 1 through $grid_size {
     .grid-#{$i} {
         width: percentage($i/$grid_size);
@@ -51,12 +61,21 @@
             }
         }
 
+        .#{map-get($grid_breakPoint, prefix)}-grid-clear {
+            float: none;
+            &:after {
+                content: " ";
+                display: block;
+                height: 0;
+                clear: both;
+            }
+        }
+
         @for $i from 1 through $grid_size {
             .#{map-get($grid_breakPoint, prefix)}-grid-#{$i} {
                 width: percentage($i/$grid_size);
             }
         }
     }
-
 }
 

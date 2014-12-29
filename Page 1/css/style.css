@@ -126,6 +126,14 @@ ol {
   margin-left: 0 !important;
   margin-right: 0 !important; }
 
+.grid-clear {
+  float: none; }
+  .grid-clear:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both; }
+
 .grid-1 {
   width: 8.33333%; }
 
@@ -169,6 +177,14 @@ ol {
   .grid > * {
     padding: 0 2%; }
 
+  .tab-grid-clear {
+    float: none; }
+    .tab-grid-clear:after {
+      content: " ";
+      display: block;
+      height: 0;
+      clear: both; }
+
   .tab-grid-1 {
     width: 8.33333%; }
 
@@ -208,6 +224,14 @@ ol {
   .grid > * {
     padding: 0 2%; }
 
+  .pal-grid-clear {
+    float: none; }
+    .pal-grid-clear:after {
+      content: " ";
+      display: block;
+      height: 0;
+      clear: both; }
+
   .pal-grid-1 {
     width: 8.33333%; }
 
@@ -246,6 +270,14 @@ ol {
 @media (max-width: 479px) {
   .grid > * {
     padding: 0 2%; }
+
+  .mob-grid-clear {
+    float: none; }
+    .mob-grid-clear:after {
+      content: " ";
+      display: block;
+      height: 0;
+      clear: both; }
 
   .mob-grid-1 {
     width: 8.33333%; }
@@ -325,6 +357,7 @@ ol {
 .sidebar {
   border-right: 0px solid #aaa;
   position: fixed;
+  z-index: 500;
   top: 0;
   width: 221px;
   height: 100%;
@@ -337,6 +370,17 @@ ol {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+  @media (max-width: 679px) {
+    .sidebar {
+      width: 0;
+      overflow: hidden;
+      bottom: 0;
+      top: auto; }
+      .sidebar.opened {
+        width: 221px;
+        top: 0;
+        padding-top: 0;
+        height: 100%; } }
 
 .main-menu {
   font-family: "Audiowide", sans-serif;
@@ -351,20 +395,6 @@ ol {
     .main-menu .image-link img {
       max-width: 100%;
       display: block; }
-  @media (max-width: 679px) {
-    .main-menu {
-      border-top: 40px solid #032459;
-      height: 0px;
-      overflow: hidden;
-      bottom: 0;
-      top: auto;
-      width: 100%; }
-      .main-menu.opened {
-        border: 0;
-        width: 221px;
-        top: 0;
-        padding-top: 0;
-        height: 100%; } }
 
 .main-menu-item {
   display: block;
@@ -550,8 +580,7 @@ a {
   margin-left: 221px; }
   @media (max-width: 679px) {
     .wrapper {
-      margin-left: 0px;
-      margin-bottom: 40px; } }
+      margin-left: 0px; } }
 
 h1, h2, h3, h4, h5, h6, .title {
   font-family: "Audiowide", sans-serif; }
@@ -635,6 +664,10 @@ h1, h2, h3, h4, h5, h6, .title {
   .footer a {
     color: black;
     text-decoration: underline; }
+
+.footer-headline {
+  margin-top: 20px;
+  font-family: "Audiowide", sans-serif; }
 
 /* Slider */
 .slick-slider {
