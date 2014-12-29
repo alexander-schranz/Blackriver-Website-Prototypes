@@ -1,7 +1,7 @@
 @if $grid_type == 'float' {
     .grid {
         &:after {
-            *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML += '<div class="ie7-clear"></div>' );
+            zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML += '<div class="ie7-clear"></div>' );
         }
         &.ie7-clear {
             height: 0;
@@ -11,7 +11,7 @@
     }
     .grid-clear {
         &:after {
-            *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML += '<div class="ie7-clear"></div>' );
+            zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML += '<div class="ie7-clear"></div>' );
         }
         &.ie7-clear {
             height: 0;
@@ -24,7 +24,7 @@
         @media (max-width: #{map-get($grid_breakPoint, maxWidth)}) {
             .#{map-get($grid_breakPoint, prefix)}-grid-clear {
                 &:after {
-                    *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML += '<div class="ie7-clear"></div>' );
+                    zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML += '<div class="ie7-clear"></div>' );
                 }
                 &.ie7-clear {
                     height: 0;
