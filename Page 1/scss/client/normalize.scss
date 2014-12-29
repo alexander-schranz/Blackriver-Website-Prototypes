@@ -1,0 +1,66 @@
+/* =================== *
+ *    OWN NORMALIZE    *
+ * =================== */
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: $defaultLineHeightHeadlines;
+}
+
+h2 {
+    font-size: 1.8em;
+    line-height: $defaultLineHeightHeadlines;
+}
+
+h3 {
+    font-size: 1.6em;
+    line-height: $defaultLineHeightHeadlines;
+}
+
+h4 {
+    font-size: 1.4em;
+    line-height: $defaultLineHeightHeadlines;
+}
+
+h5 {
+    font-size: 1.2em;
+    line-height: $defaultLineHeightHeadlines;
+}
+
+h6 {
+    font-size: 1.1em;
+    line-height: $defaultLineHeightHeadlines;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+strike, s  {
+    text-decoration: line-through;
+}
+
+em, i {
+    font-style: italic;
+}
+
+ul, ol {
+    list-style: decimal;
+    margin-left: 2em;
+}
+
+ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+    li {
+        list-style-type: decimal;
+    }
+}

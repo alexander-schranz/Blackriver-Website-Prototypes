@@ -1,0 +1,12 @@
+@if $grid_type == 'float' {
+    .grid {
+        &:after {
+            *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML += '<div class="ie7-clear"></div>' );
+        }
+        &.ie7-clear {
+            height: 0;
+            display: block;
+            clear: both;
+        }
+    }
+}

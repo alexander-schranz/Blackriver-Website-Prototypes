@@ -1,0 +1,167 @@
+/* =================== *
+ *       PAGINATOR     *
+ * =================== */
+.paginator {
+    font-family: $paginatorFont;
+    ul  {
+        margin: 20px 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
+    li {
+        @include inline-block;
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        text-decoration: none;
+        color: $paginatorColor;
+        @include inline-block;
+        width: 20px;
+        text-align: center;
+        &.active {
+            color: $paginatorActiveColor;
+            font-weight: bold;
+        }
+        &:hover {
+            color: $paginatorActiveColor;
+            font-weight: bold;
+        }
+    }
+    .prev, .next {
+        font-weight: bold;
+    }
+}
+
+/* =================== *
+ *       MAIN MENU     *
+ * =================== */
+.sidebar {
+    border-right: $menuBorderWidth solid $menuBorderColor;
+    position: fixed;
+    top: 0;
+    width: $navigationWidth;
+    height: 100%;
+    background-color: $menuBgColor;
+    overflow-x: hidden;
+    will-change: position, width;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.main-menu {
+    font-family: $menuFont;
+    color: $menuFontColor;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        /* padding-bottom: 100px; */
+    }
+
+    .image-link {
+        display: block;
+        padding: 0;
+        img {
+            max-width: 100%;
+            display: block;
+        }
+    }
+    @media (max-width: $mobileBreakPoint) {
+        border-top: 40px solid $mainColor;
+        height: 0px;
+        overflow: hidden;
+        bottom: 0;
+        top: auto;
+        width: 100%;
+        &.opened {
+            border: 0;
+            width: $navigationWidth;
+            top: 0;
+            padding-top: 0;
+            height: 100%;
+        }
+    }
+}
+
+.main-menu-item {
+    display: block;
+    color: $menuFontColor;
+    text-decoration: none;
+    padding-top: $navigationItemPadding;
+    padding-bottom: $navigationItemPadding;
+    cursor: pointer;
+    &:hover {
+        color: $menuHoverColor;
+        background-color: $menuHoverBgColor;
+    }
+    &.active {
+        color: $menuActiveColor;
+    }
+}
+
+.has-sub-menu {
+    position: relative;
+    .close-icon {
+        display: none;
+    }
+
+    .open-icon,
+    .close-icon{
+        position: absolute;
+        right: $navigationItemPadding;
+        top: $navigationItemPadding;
+    }
+
+    &.opened {
+        .open-icon {
+            display: none;
+        }
+        .close-icon {
+            display: inline;
+        }
+    }
+}
+
+.main-sub-menu {
+    height: 0;
+    opacity: 0;
+    transition: all 0.25s linear;
+    overflow:hidden;
+    &.opened {
+        opacity: 1;
+        height: auto;
+        transition-delay:0s;
+        display: block;
+    }
+}
+
+.level-1 {
+    padding-left: 15px;
+}
+
+.level-2 {
+    padding-left: 30px;
+}
+
+.level-3 {
+    padding-left: 45px;
+}
+
+.level-4 {
+    padding-left: 60px;
+}
+
+.level-5 {
+    padding-left: 75px;
+}
+
+.level-6 {
+    padding-left: 90px;
+}

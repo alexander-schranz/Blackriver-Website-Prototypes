@@ -1,0 +1,62 @@
+* {
+    @include box-sizing(border-box);
+}
+
+.grid {
+    @if $grid_type == 'float' {
+        &:after {
+            content: " ";
+            display: block;
+            height: 0;
+            clear: both;
+        }
+    } @else if $grid_type == 'inlineBlock' {
+        // font-size: 0;
+        word-spacing: -0.5em;
+    }
+    > * {
+        @if $grid_type == 'float' {
+            float: left;
+        } @else if $grid_type == 'inlineBlock' {
+            @include inline-block;
+            vertical-align: top;
+            word-spacing: normal;
+            font-size: $grid_defaultFontSize;
+        }
+        padding: 0 $grid_defaultPadding;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+@for $i from 1 through $grid_size {
+    .grid-#{$i} {
+        width: percentage($i/$grid_size);
+    }
+}
+
+/* ================= *
+ *    BREAKPOINTS    *
+ * ================= */
+
+@each $grid_breakPoint in $grid_breakPoints {
+    @media (max-width: #{map-get($grid_breakPoint, maxWidth)}) {
+        .grid {
+            > * {
+                padding: 0 map-get($grid_breakPoint, padding);
+                @if $grid_type == 'inlineBlock' {
+                    font-size: map-get($grid_breakPoint, fontSize);
+                    word-spacing: normal;
+                }
+            }
+        }
+
+        @for $i from 1 through $grid_size {
+            .#{map-get($grid_breakPoint, prefix)}-grid-#{$i} {
+                width: percentage($i/$grid_size);
+            }
+        }
+    }
+
+}
+
