@@ -1,1 +1,4 @@
 .sass-cache
+.idea
+.iml
+node_modules/
