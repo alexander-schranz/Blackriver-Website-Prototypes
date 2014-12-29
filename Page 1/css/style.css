@@ -173,6 +173,9 @@ ol {
 /* ================= *
  *    BREAKPOINTS    *
  * ================= */
+.tab-grid-clear {
+  display: none; }
+
 @media (max-width: 1023px) {
   .grid > * {
     padding: 0 2%; }
@@ -220,6 +223,9 @@ ol {
 
   .tab-grid-12 {
     width: 100%; } }
+.pal-grid-clear {
+  display: none; }
+
 @media (max-width: 679px) {
   .grid > * {
     padding: 0 2%; }
@@ -267,6 +273,9 @@ ol {
 
   .pal-grid-12 {
     width: 100%; } }
+.mob-grid-clear {
+  display: none; }
+
 @media (max-width: 479px) {
   .grid > * {
     padding: 0 2%; }

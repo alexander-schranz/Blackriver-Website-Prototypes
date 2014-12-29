@@ -48,8 +48,10 @@
 /* ================= *
  *    BREAKPOINTS    *
  * ================= */
-
 @each $grid_breakPoint in $grid_breakPoints {
+    .#{map-get($grid_breakPoint, prefix)}-grid-clear {
+        display: none;
+    }
     @media (max-width: #{map-get($grid_breakPoint, maxWidth)}) {
         .grid {
             > * {
