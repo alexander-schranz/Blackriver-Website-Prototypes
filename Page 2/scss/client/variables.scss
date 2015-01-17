@@ -43,9 +43,9 @@ $paginatorActiveColor: #aaa;
 $paginatorFont: $styleFont;
 
 /* FOOTER */
-$footerLinkColor: black;
-$footerBgColor: transparent;
-$footerColor: black;
+$footerLinkColor: white;
+$footerBgColor: $mainColor;
+$footerColor: white;
 $footerBorderColor: $borderColor;
 $footerBorderWidth: 0; //1px;
 $footerHeadlines: $styleFont;
@@ -54,7 +54,6 @@ $footerHeadlines: $styleFont;
 $articleBorderColor: $borderColor;
 $authorLinkFont: $styleFont;
 $articleBorder: 0; //1px;
-
 
 /* =================== *
  *    GRID VARIABLES   *
