@@ -1,0 +1,93 @@
+/* =================== *
+ *       DEFAULTS      *
+ * =================== */
+
+html {
+    font-size: $defaultFontSize;
+    font-family: $defaultFont;
+    line-height: $defaultLineHeight;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100%;
+    // background: url('../img/bg/blackorchid.png');
+    background-color: $bodyBgColor;
+    background-image: $bodyBgImage;
+    margin: 0;
+}
+
+a {
+    color: $mainColor;
+}
+
+/* =================== *
+ *       CONTENT       *
+ * =================== */
+
+.content-wrapper {
+    max-width: $maxContentWidth;
+    @if $contentPosition == 'center' {
+        margin: 0 auto;
+    } @else if $contentPosition == 'right' {
+        margin-left: auto;
+    }
+    box-shadow: 0 0 20px #aaa;
+    background-color: $bCgontentColor;
+}
+
+.wrapper {
+    min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, .title {
+    font-family: $headlineFont;
+}
+
+.centered {
+    text-align: center;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    // Overwrite font
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.max-width {
+    max-width: $maxContentWidth;
+    padding: 0 $maxWidthPadding;
+    margin: 0 auto;
+}
+
+/* =================== *
+ *      SPONSOREN      *
+ * =================== */
+#sponsoren-small {
+    /*
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    background: white;
+    */
+}
+
+/* =================== *
+ *       ARTICLE       *
+ * =================== */
+.articles {
+    border-bottom: $articleBorder solid $articleBorderColor;
+}
+
+.article-author {
+    text-align: right;
+}
+
+.author-link {
+    font-family: $authorLinkFont;
+}
+
+.article {
+    margin-top: 40px;
+}

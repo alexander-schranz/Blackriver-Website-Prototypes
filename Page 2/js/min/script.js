@@ -2149,21 +2149,28 @@ Blackriver.Carousel = (function (window, document, $, undefined) {
 
     var options = {
         $carousels: $('.carousel'),
-        $verticalCarousels:  $('.vertical-carousel')
+        $verticalCarousels:  $('.vertical-carousel'),
+        $header:  $('.header')
     };
 
     function init() {
-        $(options.$carousels).slick({
+        options.$carousels.slick({
             arrows: false,
             autoplay: true
         });
-        $(options.$verticalCarousels).slick({
+        options.$verticalCarousels.slick({
             arrows: false,
             autoplay: true,
             vertical: true
         });
+        options.$header.height(Blackriver.Website.getOptions().windowHeight * 0.75 - 50);
+
+        Blackriver.Website.addResizeListener('header-slider', function(e, scrollPosition, windowWidth, windowHeight) {
+            options.$header.height(windowHeight * 0.75 - 50);
+        });
     }
 
+    
     $(document).ready(function() {
         Blackriver.Carousel.init();
     });
@@ -2172,7 +2179,6 @@ Blackriver.Carousel = (function (window, document, $, undefined) {
         init: init
     };
 })(window, document, jQuery);
-
 var Blackriver = Blackriver || {};
 
 Blackriver.Menu = (function (window, document, $, undefined) {
@@ -2222,8 +2228,6 @@ var Blackriver = Blackriver || {};
 Blackriver.Website = (function (window, document, $, undefined) {
 
     var options = {
-        $sponsorBlockSmall: $('#sponsoren-small'),
-        $sponsorBlock:  $('#sponsoren'),
         scrollPosition: parseInt($(window).scrollTop()),
         windowWidth: parseInt($(window).width()),
         windowHeight: parseInt($(window).height()),
@@ -2232,25 +2236,11 @@ Blackriver.Website = (function (window, document, $, undefined) {
     };
 
     function init() {
-        showSponsorsOnlyOnce();
     }
 
-    // SPONSOR HIDE SHOW
-    function showSponsorsOnlyOnce() {
-        hideShowSponsorSmall(options.scrollPosition, options.windowWidth, options.windowHeight)
-        addScrollListener('sponsors', function(e, position, width, height) {
-            hideShowSponsorSmall(position, width, height);
-        });
-    }
-
-    function hideShowSponsorSmall(position, width, height) {
-        var sponsorPosition = parseInt(options.$sponsorBlock.offset().top);
-        var currentPosition = position + height;
-        if (sponsorPosition < currentPosition) {
-            options.$sponsorBlockSmall.stop(false, false).fadeTo('fast', 0);
-        } else {
-            options.$sponsorBlockSmall.stop(false, false).fadeTo('fast', 1);
-        }
+    // Return Options
+    function getOptions() {
+        return options;
     }
 
     // Scroll Listener Functions
@@ -2298,7 +2288,7 @@ Blackriver.Website = (function (window, document, $, undefined) {
         addScrollListener: addScrollListener,
         deleteScrollListener: deleteScrollListener,
         addResizeListener: addResizeListener,
-        deleteResizeListener: deleteResizeListener
+        deleteResizeListener: deleteResizeListener,
+        getOptions: getOptions
     };
 })(window, document, jQuery);
-

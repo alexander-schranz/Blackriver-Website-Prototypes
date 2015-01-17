@@ -1,0 +1,87 @@
+/* =================== *
+ *  CONTENT VARIABLES  *
+ * =================== */
+
+$mainColor: #032459;
+$borderColor: #aaa;
+
+
+$bodyBgColor: white;
+$bodyBgImage: '';
+// $bodyBgImage: url('../img/bg/graphy.png');
+
+/* CONTENT */
+$bCgontentColor: transparent; // rgba(255,255,255,0.8);
+$defaultFont: 'Open Sans', sans-serif;
+$styleFont: 'Audiowide', sans-serif;
+$defaultFontSize: 16px;
+$defaultLineHeight: 1.4em;
+$defaultLineHeightHeadlines: 1.4em;
+$mobileBreakPoint: 679px;
+$maxContentWidth: 1440px;
+$maxWidthPadding: 50px;
+$contentPosition: 'left';
+
+/* Headlines */
+$headlineFont: $styleFont;
+
+/* MENU */
+$menuBgColor: $mainColor;
+$menuSubMenuBgColor: $mainColor;
+$menuFontColor: white;
+$menuHoverColor: black;
+$menuHoverBgColor: white;
+$menuFont: $styleFont;
+$menuHeight: 50px;
+$menuZIndex: 500;
+/* Header */
+$headerFont: $styleFont;
+
+/* PAGINATOR */
+$paginatorColor: black;
+$paginatorActiveColor: #aaa;
+$paginatorFont: $styleFont;
+
+/* FOOTER */
+$footerLinkColor: black;
+$footerBgColor: transparent;
+$footerColor: black;
+$footerBorderColor: $borderColor;
+$footerBorderWidth: 0; //1px;
+$footerHeadlines: $styleFont;
+
+/* Article */
+$articleBorderColor: $borderColor;
+$authorLinkFont: $styleFont;
+$articleBorder: 0; //1px;
+
+
+/* =================== *
+ *    GRID VARIABLES   *
+ * =================== */
+
+$grid_defaultPadding: 2%;
+$grid_defaultFontSize: $defaultFontSize;
+$grid_size: 12;
+$grid_type: 'float'; // float, inlineBlock
+
+$grid_breakPoints: (
+        (
+                'prefix': 'tab',
+                'maxWidth': '1023px',
+                'padding': $grid_defaultPadding,
+                'fontSize': $defaultFontSize
+        ),
+        (
+                'prefix': 'pal',
+                'maxWidth': $mobileBreakPoint,
+                'padding': $grid_defaultPadding,
+                'fontSize': $defaultFontSize
+        ),
+        (
+                'prefix': 'mob',
+                'maxWidth': '479px',
+                'padding': $grid_defaultPadding,
+                'fontSize': $defaultFontSize
+        )
+);
